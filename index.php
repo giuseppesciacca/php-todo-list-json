@@ -22,20 +22,27 @@ $tasks_list = json_decode($tasks_string, true);
     <div id="app">
 
         <header>
-            <h1>Todo List</h1>
+            <div class="container">
+                <h1 class="text-center">Todo List</h1>
+            </div>
         </header>
-        <main>
-            <form action="" method="get">
-                <div class="mb-3">
-                    <label for="task" class="form-label">Name</label>
-                    <input type="text" class="form-control" name="task" id="" aria-describedby="helpId" placeholder="Inserisci task">
-                </div>
-            </form>
 
-            <ul>
-                <li v-for="task in tasks">{{task}}</li>
-            </ul>
+        <main>
+            <div class="container">
+                <form action="" method="get">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="task" id="" aria-describedby="helpId" placeholder="Inserisci nuova task" v-on:keyup.enter="addTask()" v-model="new_task">
+
+                        <button type="submit" class="btn btn-primary m-3" @click="addTask()">Invia</button>
+                        <button type="reset" class="btn btn-primary">Annulla</button>
+                    </div>
+                </form>
+
+                <ul>
+                    <li v-for="task in tasks">{{task}}</li>
+                </ul>
         </main>
+    </div>
 
 
 
