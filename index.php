@@ -14,6 +14,8 @@ $tasks_list = json_decode($tasks_string, true);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
+    <!-- Font-awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- CSS -->
@@ -32,7 +34,11 @@ $tasks_list = json_decode($tasks_string, true);
         <main>
             <div class="container">
                 <ul class="rounded-2 my-3 p-0">
-                    <li v-for="task in tasks" :class="task.status == 'done' ? 'done' : ''">{{task.task}}</li>
+                    <li v-for="task in tasks" class="d-flex align-items-center justify-content-between">
+                        <span :class="task.status == 'done' ? 'done' : ''">{{task.task}}</span>
+                        <span class="trash rounded-2 btn btn-danger">
+                            <i class="fa-solid fa-trash"></i></span>
+                    </li>
                 </ul>
 
                 <form action="" method="get">
