@@ -2,7 +2,7 @@
 
 $tasks_string = file_get_contents('tasks.json');
 $tasks_list = json_decode($tasks_string, true);
-var_dump($tasks_list);
+//var_dump($tasks_list);
 
 ?>
 
@@ -19,21 +19,28 @@ var_dump($tasks_list);
 </head>
 
 <body>
-    <header>
-        <h1>Todo List</h1>
-    </header>
-    <main>
-        <form action="" method="get">
-            <div class="mb-3">
-                <label for="task" class="form-label">Name</label>
-                <input type="text" class="form-control" name="task" id="" aria-describedby="helpId" placeholder="Inserisci task">
-            </div>
-        </form>
+    <div id="app">
 
-        <ul>
-            <li></li>
-        </ul>
-    </main>
+        <header>
+            <h1>Todo List</h1>
+        </header>
+        <main>
+            <form action="" method="get">
+                <div class="mb-3">
+                    <label for="task" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="task" id="" aria-describedby="helpId" placeholder="Inserisci task">
+                </div>
+            </form>
+
+            <ul>
+                <li v-for="task in tasks">{{task}}</li>
+            </ul>
+        </main>
+
+
+
+
+    </div>
 
 
     <!-- Bootstrap JS Bundle -->
@@ -42,6 +49,8 @@ var_dump($tasks_list);
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Vue.js CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- JS -->
+    <script src="./main.js"></script>
 </body>
 
 </html>
