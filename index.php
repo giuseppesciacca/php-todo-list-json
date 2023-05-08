@@ -59,7 +59,7 @@ $tasks_list = json_decode($tasks_string, true);
     <!-- Vue.js CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- JS -->
-    <script src="./main.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

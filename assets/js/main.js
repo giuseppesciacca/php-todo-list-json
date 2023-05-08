@@ -4,7 +4,7 @@ createApp({
     data() {
         return {
             tasks: [],
-            api_url: './get_task.php',
+            api_url: './tasks.json',
             new_task: '',
         }
     },
