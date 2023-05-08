@@ -22,6 +22,17 @@ createApp({
             }).catch(error => {
                 console.error(error.message);
             })
+        },
+        reloadTask() {
+            axios
+                .get(this.api_url)
+                .then(response => {
+                    //console.log(response.data);
+                    this.tasks = response.data
+                })
+                .catch(error => {
+                    console.error(error.message);
+                })
         }
     },
     mounted() {
