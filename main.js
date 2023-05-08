@@ -1,4 +1,3 @@
-
 const { createApp } = Vue
 
 createApp({
@@ -14,7 +13,6 @@ createApp({
             const data = {
                 new_task: this.new_task
             }
-            console.log(data);
 
             axios.post('./store_tasks.php', data, {
                 headers: { 'Content-Type': 'multipart/form-data' }

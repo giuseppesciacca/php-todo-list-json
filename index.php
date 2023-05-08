@@ -33,8 +33,8 @@ $tasks_list = json_decode($tasks_string, true);
                     <div class="mb-3">
                         <input type="text" class="form-control" name="task" id="" aria-describedby="helpId" placeholder="Inserisci nuova task" keyup.enter="addTask()" v-model="new_task">
 
-                        <button type="submit" class="btn btn-primary m-3" @click="addTask()">Invia</button>
-                        <button type="reset" class="btn btn-primary">Annulla</button>
+                        <button type="submit" class="btn btn-primary m-3" @click.prevent="addTask()">Invia</button>
+                        <button type="reset" class="btn btn-danger">Annulla</button>
                     </div>
                 </form>
 
