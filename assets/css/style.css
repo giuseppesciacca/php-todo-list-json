@@ -1,3 +1,35 @@
+body {
+    background-color: #001632;
+}
+
+h1 {
+    color: #6b747c;
+    font-size: 5rem;
+    font-weight: normal;
+}
+
+
+ul {
+    background-color: white;
+    width: 400px;
+    margin: auto;
+    list-style: none;
+}
+
+li {
+    border-bottom: 1px solid lightgray;
+    padding: 1rem;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
 .done {
     text-decoration: line-through;
+}
+
+form {
+    width: 400px;
+    margin: auto;
 }

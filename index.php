@@ -31,18 +31,18 @@ $tasks_list = json_decode($tasks_string, true);
 
         <main>
             <div class="container">
-                <form action="" method="get">
-                    <div class="mb-3">
-                        <input type="text" class="form-control" name="task" id="" aria-describedby="helpId" placeholder="Inserisci nuova task" keyup.enter="addTask(), reloadTask()" v-model="new_task">
-
-                        <button type="submit" class="btn btn-primary m-3" @click.prevent="addTask(), reloadTask()">Invia</button>
-                        <button type="reset" class="btn btn-danger">Annulla</button>
-                    </div>
-                </form>
-
-                <ul>
+                <ul class="rounded-2 my-3 p-0">
                     <li v-for="task in tasks" :class="task.status == 'done' ? 'done' : ''">{{task.task}}</li>
                 </ul>
+
+                <form action="" method="get">
+                    <div class="input-group mb-3">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="task" id="form-file" aria-describedby="helpId" placeholder="Inserisci elemento..." keyup.enter="addTask(), reloadTask()" v-model="new_task">
+                            <span class="input-group-text btn btn-outline-warning" @click.prevent="addTask(), reloadTask()">Inserisci</span>
+                        </div>
+                    </div>
+                </form>
         </main>
     </div>
 
