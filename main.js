@@ -18,7 +18,7 @@ createApp({
                 headers: { 'Content-Type': 'multipart/form-data' }
             }).then(function (response) {
                 this.tasks = response.data
-                console.log(this.tasks);
+                //console.log(this.tasks);
             }).catch(error => {
                 console.error(error.message);
             })
