@@ -1,14 +1,16 @@
 <?php
 if (isset($_POST['new_task'])) {
-    $new_task = $_POST['new_task'];
-    var_dump($new_task);
-    //$new_task = 'prova';
-
+    $new_task = [
+        "task" => $_POST['new_task'],
+        "status" => "undone"
+    ];
 
     $tasks_string = file_get_contents('./tasks.json');
 
     $task_list = json_decode($tasks_string, true);
     //var_dump($task_list);
+
+
 
     array_push($task_list, $new_task);
     var_dump($task_list);

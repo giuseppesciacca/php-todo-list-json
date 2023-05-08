@@ -9,6 +9,9 @@ createApp({
         }
     },
     methods: {
+        /**
+         * send task to store_tasks.php that push the task in tasks.json
+         */
         addTask() {
             const data = {
                 new_task: this.new_task
@@ -23,6 +26,9 @@ createApp({
                 console.error(error.message);
             })
         },
+        /**
+         * reload tasks array
+         */
         reloadTask() {
             axios
                 .get(this.api_url)
