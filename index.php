@@ -31,7 +31,7 @@
                 <ul class="rounded-2 my-3 p-0">
                     <li v-for="(task, index) in tasks" class="d-flex align-items-center justify-content-between">
                         <span @click="change_status_task(task.task, index, task.status)" :class="task.status == 'done' ? 'done' : ''">{{task.task}}</span>
-                        <span class="trash rounded-2 btn btn-danger">
+                        <span @click="delete_task(index)" class="trash rounded-2 btn btn-danger">
                             <i class="fa-solid fa-trash"></i></span>
                     </li>
                 </ul>

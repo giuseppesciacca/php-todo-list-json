@@ -43,15 +43,38 @@ createApp({
                 })
         },
         /**
-         *
+         * 
+         * @param {string} task 
+         * @param {number} index 
+         * @param {string} status 
          */
         change_status_task(task, index, status) {
-            console.log('task completata', index);
+            //console.log('task completata', index);
 
             const data = {
                 text: task,
                 index_task: index,
                 status: status
+            }
+
+            axios.post('./change_status_task.php', data, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then(function (response) {
+                this.tasks = response.data
+                //console.log(this.tasks);
+            }).catch(error => {
+                console.error(error.message);
+            })
+        },
+        /**
+         * 
+         * @param {number} index 
+         */
+        delete_task(index) {
+            console.log('task eliminata', index);
+
+            const data = {
+                index_task: index,
             }
 
             axios.post('./change_status_task.php', data, {

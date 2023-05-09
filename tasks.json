@@ -1,1 +1,26 @@
-[{"task":"Imparare HTML5","status":"undone"},{"task":"Imparare CSS3","status":"done"},{"task":"Imparare JS","status":"done"},{"task":"Imparare HTML5","status":"done"},{"task":"Imparare Vue.js","status":"done"},{"task":"Imparare php","status":"undone"}]
+[
+    {
+        "task": "Imparare HTML5",
+        "status": "done"
+    },
+    {
+        "task": "Imparare CSS3",
+        "status": "done"
+    },
+    {
+        "task": "Imparare JS",
+        "status": "done"
+    },
+    {
+        "task": "Imparare HTML5",
+        "status": "done"
+    },
+    {
+        "task": "Imparare Vue.js",
+        "status": "done"
+    },
+    {
+        "task": "Imparare php",
+        "status": "undone"
+    }
+]
