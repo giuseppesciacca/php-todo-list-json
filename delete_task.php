@@ -5,7 +5,7 @@ $tasks_string = file_get_contents('./tasks.json');
 
 $task_list = json_decode($tasks_string, true);
 
-array_splice($task_list, $index);
+array_splice($task_list, $index, 1);
 
 $new_tasks_string = json_encode($task_list);
 

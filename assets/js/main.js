@@ -4,7 +4,10 @@ createApp({
     data() {
         return {
             tasks: [],
-            api_url: './tasks.json',
+            url_get_task: './get_task.php',
+            url_post_store_task: './store_tasks.php',
+            url_post_change_status: './change_status_task.php',
+            url_post_delete_task: './delete_task.php',
             new_task: '',
         }
     },
@@ -17,7 +20,7 @@ createApp({
                 new_task: this.new_task
             }
 
-            axios.post('./store_tasks.php', data, {
+            axios.post(this.url_post_store_task, data, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             }).then(function (response) {
                 this.tasks = response.data
@@ -33,7 +36,7 @@ createApp({
          */
         reloadTask() {
             axios
-                .get(this.api_url)
+                .get(this.url_get_task)
                 .then(response => {
                     //console.log(response.data);
                     this.tasks = response.data
@@ -57,7 +60,7 @@ createApp({
                 status: status
             }
 
-            axios.post('./change_status_task.php', data, {
+            axios.post(this.url_post_change_status, data, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             }).then(function (response) {
                 this.tasks = response.data
@@ -77,7 +80,7 @@ createApp({
                 index_task: index,
             }
 
-            axios.post('./change_status_task.php', data, {
+            axios.post(this.url_post_delete_task, data, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             }).then(function (response) {
                 this.tasks = response.data
@@ -89,7 +92,7 @@ createApp({
     },
     mounted() {
         axios
-            .get(this.api_url)
+            .get(this.url_get_task)
             .then(response => {
                 //console.log(response.data);
                 this.tasks = response.data
