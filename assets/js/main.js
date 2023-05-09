@@ -41,6 +41,27 @@ createApp({
                 .catch(error => {
                     console.error(error.message);
                 })
+        },
+        /**
+         *
+         */
+        change_status_task(task, index, status) {
+            console.log('task completata', index);
+
+            const data = {
+                text: task,
+                index_task: index,
+                status: status
+            }
+
+            axios.post('./change_status_task.php', data, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then(function (response) {
+                this.tasks = response.data
+                //console.log(this.tasks);
+            }).catch(error => {
+                console.error(error.message);
+            })
         }
     },
     mounted() {
