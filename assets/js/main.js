@@ -25,6 +25,8 @@ createApp({
             }).catch(error => {
                 console.error(error.message);
             })
+
+            this.new_task = ''
         },
         /**
          * reload tasks array

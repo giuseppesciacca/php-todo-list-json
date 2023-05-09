@@ -33,12 +33,10 @@
                     </li>
                 </ul>
 
-                <form action="" method="get">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="task" id="form-file" aria-describedby="helpId" placeholder="Inserisci elemento..." @keyup.enter="addTask(), reloadTask()" v-model.trim="new_task">
-                        <span class="input-group-text btn btn-outline-warning" @click.prevent="addTask(), reloadTask()">Inserisci</span>
-                    </div>
-                </form>
+                <div class="form input-group mb-3">
+                    <input type="text" class="form-control" name="task" id="form-file" aria-describedby="helpId" placeholder="Inserisci elemento..." @keyup.enter="addTask(), reloadTask()" v-model.trim="new_task">
+                    <span class="input-group-text btn btn-outline-warning" @click.prevent="addTask(), reloadTask()">Inserisci</span>
+                </div>
             </div>
         </main>
     </div>
