@@ -17,6 +17,10 @@
     },
     {
         "task": "Imparare php",
+        "status": "done"
+    },
+    {
+        "task": "Imparare Laravel",
         "status": "undone"
     }
 ]

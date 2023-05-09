@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,15 +27,15 @@
             <div class="container">
                 <ul class="rounded-2 my-3 p-0">
                     <li v-for="(task, index) in tasks" class="d-flex align-items-center justify-content-between">
-                        <span @click="change_status_task(task.task, index, task.status), reloadTask()" :class="task.status == 'done' ? 'done' : ''">{{task.task}}</span>
-                        <span @click="delete_task(index), reloadTask()" class="trash rounded-2 btn btn-danger">
+                        <span @click="change_status_task(task.task, index, task.status)" :class="task.status == 'done' ? 'done' : ''">{{task.task}}</span>
+                        <span @click="delete_task(index)" class="trash rounded-2 btn btn-danger">
                             <i class="fa-solid fa-trash"></i></span>
                     </li>
                 </ul>
 
                 <div class="form input-group mb-3">
-                    <input type="text" class="form-control" name="task" id="form-file" aria-describedby="helpId" placeholder="Inserisci elemento..." @keyup.enter="addTask(), reloadTask()" v-model.trim="new_task">
-                    <span class="input-group-text btn btn-outline-warning" @click.prevent="addTask(), reloadTask()">Inserisci</span>
+                    <input type="text" class="form-control" name="task" id="form-file" aria-describedby="helpId" placeholder="Inserisci elemento..." @keyup.enter="addTask()" v-model.trim="new_task">
+                    <span class="input-group-text btn btn-outline-warning" @click.prevent="addTask()">Inserisci</span>
                 </div>
             </div>
         </main>

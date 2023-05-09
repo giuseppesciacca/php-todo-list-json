@@ -3,11 +3,11 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            tasks: [],
             url_get_task: './get_task.php',
             url_post_store_task: './store_tasks.php',
             url_post_change_status: './change_status_task.php',
             url_post_delete_task: './delete_task.php',
+            tasks: [],
             new_task: '',
         }
     },
@@ -30,6 +30,7 @@ createApp({
             })
 
             this.new_task = ''
+            this.reloadTask()
         },
         /**
          * reload tasks array
@@ -68,6 +69,8 @@ createApp({
             }).catch(error => {
                 console.error(error.message);
             })
+
+            this.reloadTask()
         },
         /**
          * 
@@ -88,6 +91,8 @@ createApp({
             }).catch(error => {
                 console.error(error.message);
             })
+
+            this.reloadTask()
         }
     },
     mounted() {
