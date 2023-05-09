@@ -25,6 +25,10 @@ li:last-child {
     border-bottom: none;
 }
 
+li span:first-child {
+    cursor: pointer;
+}
+
 .done {
     text-decoration: line-through;
 }
