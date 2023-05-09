@@ -1,11 +1,3 @@
-<?php
-
-$tasks_string = file_get_contents('tasks.json');
-$tasks_list = json_decode($tasks_string, true);
-//var_dump($tasks_list);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,20 +35,13 @@ $tasks_list = json_decode($tasks_string, true);
 
                 <form action="" method="get">
                     <div class="input-group mb-3">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" name="task" id="form-file" aria-describedby="helpId" placeholder="Inserisci elemento..." keyup.enter="addTask(), reloadTask()" v-model="new_task">
-                            <span class="input-group-text btn btn-outline-warning" @click.prevent="addTask(), reloadTask()">Inserisci</span>
-                        </div>
+                        <input type="text" class="form-control" name="task" id="form-file" aria-describedby="helpId" placeholder="Inserisci elemento..." @keyup.enter="addTask(), reloadTask()" v-model.trim="new_task">
+                        <span class="input-group-text btn btn-outline-warning" @click.prevent="addTask(), reloadTask()">Inserisci</span>
                     </div>
                 </form>
+            </div>
         </main>
     </div>
-
-
-
-
-    </div>
-
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

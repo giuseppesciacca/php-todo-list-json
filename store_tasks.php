@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['new_task'])) {
+if (isset($_POST['new_task']) && strlen($_POST['new_task']) > 0) {
     $new_task = [
         "task" => $_POST['new_task'],
         "status" => "undone"
