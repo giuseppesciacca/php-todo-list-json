@@ -20,17 +20,22 @@ createApp({
                 new_task: this.new_task
             }
 
-            axios.post(this.url_post_store_task, data, {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            }).then(function (response) {
-                this.tasks = response.data
-                //console.log(this.tasks);
-            }).catch(error => {
-                console.error(error.message);
-            })
+            axios
+                .post(
+                    this.url_post_store_task,
+                    data,
+                    {
+                        headers: { 'Content-Type': 'multipart/form-data' }
+                    }).then((response) => {
+                        //console.log(response);
+                        this.tasks = response.data
+                        //console.log(this.tasks);
+                    }).catch(error => {
+                        console.error(error.message);
+                    })
 
-            this.new_task = ''
             this.reloadTask()
+            this.new_task = '';
         },
         /**
          * reload tasks array
@@ -63,36 +68,38 @@ createApp({
 
             axios.post(this.url_post_change_status, data, {
                 headers: { 'Content-Type': 'multipart/form-data' }
-            }).then(function (response) {
+            }).then((response) => {
                 this.tasks = response.data
                 //console.log(this.tasks);
             }).catch(error => {
                 console.error(error.message);
             })
-
-            this.reloadTask()
         },
         /**
          * 
          * @param {number} index 
          */
         delete_task(index) {
-            console.log('task eliminata', index);
+            //console.log('task eliminata', index);
 
             const data = {
                 index_task: index,
             }
 
-            axios.post(this.url_post_delete_task, data, {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            }).then(function (response) {
-                this.tasks = response.data
-                //console.log(this.tasks);
-            }).catch(error => {
-                console.error(error.message);
-            })
-
-            this.reloadTask()
+            axios
+                .post(
+                    this.url_post_delete_task,
+                    data,
+                    {
+                        headers: { 'Content-Type': 'multipart/form-data' }
+                    }).then((response) => {
+                        //console.log(response);
+                        this.tasks = response.data
+                        this.test_delete_tasks = response.data
+                        //console.log(this.tasks);
+                    }).catch(error => {
+                        console.error(error.message);
+                    })
         }
     },
     mounted() {
