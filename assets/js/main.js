@@ -34,22 +34,7 @@ createApp({
                         console.error(error.message);
                     })
 
-            this.reloadTask()
             this.new_task = '';
-        },
-        /**
-         * reload tasks array
-         */
-        reloadTask() {
-            axios
-                .get(this.url_get_task)
-                .then(response => {
-                    //console.log(response.data);
-                    this.tasks = response.data
-                })
-                .catch(error => {
-                    console.error(error.message);
-                })
         },
         /**
          * 

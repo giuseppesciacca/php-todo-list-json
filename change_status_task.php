@@ -3,7 +3,7 @@ $index = $_POST['index_task'];
 $text = $_POST['text'];
 $status = $_POST['status'];
 
-$tasks_string = file_get_contents('./tasks.json');
+$tasks_string = file_get_contents('./assets/data/tasks.json');
 
 $task_list = json_decode($tasks_string, true);
 
@@ -20,7 +20,7 @@ $task_list[$index] = [
 
 $new_tasks_string = json_encode($task_list);
 
-file_put_contents('tasks.json', $new_tasks_string);
+file_put_contents('./assets/data/tasks.json', $new_tasks_string);
 
 header('Content-Type: application/json');
 

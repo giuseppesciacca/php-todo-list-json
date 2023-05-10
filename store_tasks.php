@@ -5,16 +5,16 @@ if (isset($_POST['new_task']) && strlen($_POST['new_task']) > 0) {
         "status" => "undone"
     ];
 
-    $tasks_string = file_get_contents('./tasks.json');
+    $tasks_string = file_get_contents('./assets/data/tasks.json');
 
     $task_list = json_decode($tasks_string, true);
 
     array_push($task_list, $new_task);
-    var_dump($task_list);
 
     $new_tasks_string = json_encode($task_list);
 
-    file_put_contents('tasks.json', $new_tasks_string);
+    file_put_contents('./assets/data/tasks.json', $new_tasks_string);
+
 
     header('Content-Type: application/json');
 

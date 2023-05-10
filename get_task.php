@@ -1,6 +1,6 @@
 <?php
 
-$tasks_string = file_get_contents('./tasks.json');
+$tasks_string = file_get_contents('./assets/data/tasks.json');
 
 header('Content-Type: application/json');
 
